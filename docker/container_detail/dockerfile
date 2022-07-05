@@ -1,0 +1,6 @@
+FROM centos:7
+ENV user=rahul
+RUN yum install httpd -y
+COPY container_detail.sh /
+RUN chmod 777 container_detail.sh 
+ENTRYPOINT [ "/container_detail.sh" ] 
